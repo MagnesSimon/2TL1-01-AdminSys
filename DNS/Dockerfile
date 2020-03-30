@@ -8,11 +8,18 @@ RUN apt-get update
 # Installation de bind9
 RUN apt-get install -y bind9
 RUN apt-get install -y dnsutils
+RUN apt-get install -y bind9utils
+RUN apt-get install -y bind9-doc
 
-# On choisit le répértoir
-WORKDIR /etc/bind
+# Activation de IPv4
+RUN sed -i 's/OPTIONS=.*/OPTIONS="-4 -u bind"/' /etc/default/bind9
 
-VOLUME /etc/bind
+# On copie les fichier de configuration
+COPY db.internal.wt1-1.ephec-ti.be /etc/bind/
+COPY db.wt1-1.ephec-ti.be /etc/bind/
+COPY named.conf /etc/bind/
+COPY named.conf.local /etc/bind/
+COPY named.conf.options /etc/bind/
 
-# Commande qui s'exécute
-CMD ["/usr/sbin/names","-g","-c","/etc/bind/named.conf","-u","bind"]
+# Run eternal loop
+CMD ["/bin/bash", "-c", "while :; do sleep 10; done"]
