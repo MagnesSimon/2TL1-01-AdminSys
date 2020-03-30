@@ -1,0 +1,6 @@
+# Groupe 1 - Simon Magnes & François Temmerman
+
+zone "wt1-1.ephec-ti.be"{
+	type master;
+	file "/etc/bind/db.wt1-1.ephec-ti.be";
+};
