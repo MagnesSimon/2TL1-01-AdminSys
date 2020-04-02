@@ -1,4 +1,4 @@
-# Groupe 1 - Simon Magnes & François Temmerman
+# Groupe 1 - Simon Magnes & François Temmerman -test
 
 FROM ubuntu:18.04
 
