@@ -20,6 +20,11 @@ COPY db.wt1-1.ephec-ti.be /etc/bind/
 COPY named.conf /etc/bind/
 COPY named.conf.local /etc/bind/
 COPY named.conf.options /etc/bind/
+COPY named.conf.default-zones /etc/bind
 
 # Run eternal loop
-CMD ["/bin/bash", "-c", "while :; do sleep 10; done"]
+#CMD ["/bin/bash", "-c", "while :; do sleep 10; done"]
+
+EXPOSE 53
+
+CMD named -g
