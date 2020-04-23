@@ -1,6 +1,10 @@
 # Groupe 1 - Simon Magnes & François Temmerman
 
-zone "wt1-1.ephec-ti.be"{
-	type master;
-	file "/etc/bind/db.wt1-1.ephec-ti.be";
-};
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
