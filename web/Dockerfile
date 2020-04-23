@@ -5,9 +5,9 @@ FROM ubuntu:18.04
 
 #Installe le serveur apache sur notre image
 
-RUN apt-get update && upgrade
+RUN apt-get update && apt upgrade && DEBIAN_FRONTEND=noninteractive 
 
-DEBIAN_FRONTEND=noninteractive 
+
 
 RUN apt-get install -y apache2
 RUN apt-get install -y apache2-utils
