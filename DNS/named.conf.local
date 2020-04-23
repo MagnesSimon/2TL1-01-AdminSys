@@ -13,5 +13,11 @@ zone "wt1-1.ephec-ti.be" IN {
 	file "/etc/bind/db.wt1-1.ephec-ti.be";
 };
 
+zone "51.178.41.251.in-addr.arpa" {
+	type master;
+	notify no;
+	file "/etc/bind/db.192";
+};
+
 // Reseau interne
 
