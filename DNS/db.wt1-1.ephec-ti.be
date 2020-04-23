@@ -16,7 +16,7 @@ wt1-1.ephec-ti.be.	 IN	    SOA	  ns.wt1-1.ephec-ti.be. s.magnes@students.ephec.b
                               
 	                      IN      A     51.178.40.251
                               
-wt1-3.ephec-ti.be.            IN      NS    ns.wt1-1.ephec-ti.be.
+wt1-1.ephec-ti.be.            IN      NS    ns.wt1-1.ephec-ti.be.
 ns.wt1-1.ephec-ti.be.         IN      A     51.178.40.251
 www.wt1-1.ephec-ti.be.        IN      A     51.178.40.251
 b2b.wt1-1.ephec-ti.be.        IN      A     51.178.40.251
