@@ -8,3 +8,10 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
+zone "wt1-1.ephec-ti.be" IN {
+	type master;
+	file "/etc/bind/db.wt1-1.ephec-ti.be";
+};
+
+// Reseau interne
+
