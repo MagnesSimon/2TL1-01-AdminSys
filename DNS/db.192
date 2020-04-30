@@ -1,11 +1,11 @@
 # Groupe 1 - Simon Magnes & François Temmerman
-
+# INCREMENTER SERIAL A CHAQUE MODIFICATION
 ;
 ; BIND reverse data file for local loopback interface
 ;
 $TTL    604800
 @       IN      SOA     localhost. root.localhost. (
-                      323042020         ; Serial
+                      230042020         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
@@ -13,5 +13,4 @@ $TTL    604800
 ;
 @       IN      NS      ns.wt1-1.ephec-ti.be.
 1.0.0   IN      PTR     ns.wt1-1.ephec-ti.be.
-
 
