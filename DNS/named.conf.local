@@ -8,16 +8,31 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-zone "wt1-1.ephec-ti.be" IN {
-	type master;
-	file "/etc/bind/db.wt1-1.ephec-ti.be";
+
+// Reseau externe
+view external {
+        match-clients {any;};
+        zone "wt1-1.ephec-ti.be" IN {
+                type master;
+                file "/etc/bind/db.wt1-1.ephec-ti.be";
+        };
 };
 
-zone "51.178.41.251.in-addr.arpa" {
-	type master;
-	notify no;
-	file "/etc/bind/db.192";
-};
+//zone "51.178.41.251.in-addr.arpa" {
+//      type master;
+//      notify no;
+//      file "/etc/bind/db.192";
+//};
 
 // Reseau interne
+//view internal {
+//      match-clients { ip_interne;};
+//      recursion yes;
+//      allow-recursion { ip_interne;};
+//      zone "wt1-1.ephec-ti.be" IN {
+//              type master;
+//              file "/etc/bind/db.internal.wt1-1.ephec-ti.be";
+//      };
+//};
+
 

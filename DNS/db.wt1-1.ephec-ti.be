@@ -9,15 +9,19 @@ wt1-1.ephec-ti.be.       IN         SOA   ns.wt1-1.ephec-ti.be. he201558@student
                86400 )    ; TTL minimum
 
 
-wt1-1.ephec-ti.be.                           IN      NS    ns.wt1-1.ephec-ti.be.
+wt1-1.ephec-ti.be.      IN      NS      ns.wt1-1.ephec-ti.be.
 
-www                              IN      A     51.178.40.251
+@                       IN      MX      mail.woodytoys1-1.be
 
-ns                              IN      A       51.178.40.251
-b2b                             IN      CNAME   www
-intranet                        IN      CNAME   www
+www                     IN      A       51.178.40.251
 
+ns                      IN      A       51.178.40.251
+b2b                     IN      CNAME   www
+intranet                IN      CNAME   www
 
+hostname                IN      A       51.178.41.198
+mail                    IN      A       51.178.40.198
+postfixadmin            IN      CNAME   hostname
 
 
 
