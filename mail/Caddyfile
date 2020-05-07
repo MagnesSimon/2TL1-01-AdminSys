@@ -1,0 +1,6 @@
+mail.domaine.com {
+proxy / rainloop:8888 {
+transparent
+}
+}
+
