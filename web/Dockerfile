@@ -1,19 +1,43 @@
 # Groupe 1 - Simon Magnes & François Temmerman -test
 
+#A partir d'une image ubuntu
 FROM ubuntu:18.04
 
-# Mettre le système à jour, sinon l'installation d'apache2 ne fonctionne pas
-RUN apt-get update 
+#Installe le serveur apache sur notre image
 
-# Installation d'apache
+RUN apt-get update && apt upgrade && DEBIAN_FRONTEND=noninteractive 
+
+
+
 RUN apt-get install -y apache2
 RUN apt-get install -y apache2-utils
 
-# copie de ntre site web
-COPY woodytoys/homepage.html /var/www/html
+RUN apt-get install php php-mysql nano
 
+#Copie l'html de notre dossier dans le container docker
+
+COPY wt1-1.ephec-ti.be.conf /etc/apache2/sites-available
+COPY b2b.wt1-1.ephec-ti.be.conf /etc/apache2/sites-available
+COPY intranet.wt1-1.ephec-ti.be.conf /etc/apache2/sites-available
+
+RUN ln -s /etc/apache2/sites-available/wt1-1.ephec-ti.be.conf /etc/apache2/sites-enabled
+RUN ln -s /etc/apache2/sites-available/b2b.wt1-1.ephec-ti.be.conf /etc/apache2/sites-enabled
+RUN ln -s /etc/apache2/sites-available/intranet.wt1-1.ephec-ti.be.conf /etc/apache2/sites-enabled
+
+
+RUN mkdir /var/www/b2b.wt1-1.ephec-ti.be
+RUN mkdir /var/www/wt1-1.ephec-ti.be
+RUN mkdir /var/www/intranet.wt1-1.ephec-ti.be
+
+
+COPY woodytoys_public/index.html /var/www/wt1-3.ephec-ti.be/index.html
+COPY woodytoys_b2b/indexb2b.html /var/www/b2b.wt1-3.ephec-ti.be/indexb2b.html
+COPY woodytoys_interne/indexinterne.html /var/www/intranet.wt1-3.ephec-ti.be/indexinterne.html
+
+#Spécifie sur quel numéro de port le container doit faire tourner le processus
 EXPOSE 80
-ENTRYPOINT ["apache2ctl"]
 
-CMD ["-DFOREGROUND"]
 
+
+#précise qu'on veut que le serveur http run en background
+CMD apachectl -DFOREGROUND
