@@ -31,8 +31,8 @@ RUN mkdir /var/www/intranet.wt1-1.ephec-ti.be
 
 
 COPY woodytoys_public/index.html /var/www/wt1-1.ephec-ti.be/index.html
-COPY woodytoys_b2b/indexb2b.html /var/www/b2b.wt1-1.ephec-ti.be/indexb2b.html
-COPY woodytoys_interne/indexinterne.html /var/www/intranet.wt1-1.ephec-ti.be/indexinterne.html
+COPY woodytoys_b2b/index.html /var/www/b2b.wt1-1.ephec-ti.be/index.html
+COPY woodytoys_interne/index.html /var/www/intranet.wt1-1.ephec-ti.be/index.html
 
 #Spécifie sur quel numéro de port le container doit faire tourner le processus
 EXPOSE 80
