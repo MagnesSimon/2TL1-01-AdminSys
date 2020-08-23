@@ -12,7 +12,7 @@ RUN apt-get update && apt upgrade && DEBIAN_FRONTEND=noninteractive
 RUN apt-get install -y apache2
 RUN apt-get install -y apache2-utils
 
-RUN apt-get install php php-mysql nano
+
 
 #Copie l'html de notre dossier dans le container docker
 

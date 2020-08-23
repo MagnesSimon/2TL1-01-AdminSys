@@ -28,3 +28,4 @@ COPY named.conf.default-zones /etc/bind
 EXPOSE 53
 
 CMD named -g
+
