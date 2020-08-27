@@ -1,23 +1,27 @@
-FROM UBUNTU
+FROM ubuntu:18.04
+env DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update -y  \
-&& DEBIAN_FRONTEND=noninteractive apt-get -y -q 
-&& install dovecot-common dovecot-imapd
-&&install postfix mailutils  -y
-&& apt-get -y install nano
-&&rm /etc/postfix/main.cf
-&&rm /etc/dovecot/conf.d/10-ssl.conf
-&&rm /etc/dovecot/conf.d/10-master.conf
-&&rm /etc/dovecot/conf.d/10-mail.conf
-&&rm /etc/dovecot/conf.d/10-auth.conf
 
-&&adduser contact
+RUN apt-get update -y  
+#RUN apt install dovecot-common
+RUN apt-get install -y dovecot-imapd dovecot-pop3d 
+#RUN apt-get install dovecot-imapd
+#RUN apt-get install dovecot-pop3d
+RUN apt-get install postfix mailutils  -y
+RUN apt-get -y install nano
+RUN rm /etc/postfix/main.cf
+RUN rm /etc/dovecot/conf.d/10-ssl.conf
+RUN rm /etc/dovecot/conf.d/10-master.conf
+RUN rm /etc/dovecot/conf.d/10-mail.conf
+RUN rm /etc/dovecot/conf.d/10-auth.conf
+
+RUN adduser contact
 
 #copie vps vers le container
-COPY ./main.cf /etc/postfix/
-COPY ./10-ssl.conf /etc/dovecot/conf.d/
-COPY ./10-master.conf /etc/dovecot/conf.d/
-COPY ./10-mail.conf /etc/dovecot/conf.d/
+COPY ./Postfix/main.cf /etc/postfix/
+COPY ./Dovecot/10-ssl.conf /etc/dovecot/conf.d/
+COPY ./Dovecot/10-master.conf /etc/dovecot/conf.d/
+COPY ./Dovecot/10-mail.conf /etc/dovecot/conf.d/
 
 
 

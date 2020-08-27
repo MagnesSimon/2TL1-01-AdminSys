@@ -3,6 +3,7 @@
 #A partir d'une image ubuntu
 FROM ubuntu:18.04
 
+ENV DEBIAN_FRONTEND=noninteractive
 #Installe le serveur apache sur notre image
 
 RUN apt-get update && apt-get upgrade -y && DEBIAN_FRONTEND=noninteractive 
@@ -11,7 +12,7 @@ RUN apt-get update && apt-get upgrade -y && DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get install -y apache2
 RUN apt-get install -y apache2-utils
-
+RUN apt-get install -y php php-mysql
 
 
 #Copie l'html de notre dossier dans le container docker
