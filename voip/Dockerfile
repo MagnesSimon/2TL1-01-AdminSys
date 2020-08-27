@@ -1,6 +1,7 @@
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get -y upgrade
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get -y upgrade 
 RUN apt-get install -y asterisk
 
 EXPOSE 5060/udp

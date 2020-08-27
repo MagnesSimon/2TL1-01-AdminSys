@@ -5,7 +5,7 @@ FROM ubuntu:18.04
 
 #Installe le serveur apache sur notre image
 
-RUN apt-get update && apt upgrade && DEBIAN_FRONTEND=noninteractive 
+RUN apt-get update && apt-get upgrade -y && DEBIAN_FRONTEND=noninteractive 
 
 
 
