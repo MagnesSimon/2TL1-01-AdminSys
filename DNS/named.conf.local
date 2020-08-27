@@ -11,7 +11,7 @@
 
 acl ip_interne {
         localhost;
-        51.178.40.219;
+        51.178.40.251;
 };
 
 // Reseau interne
