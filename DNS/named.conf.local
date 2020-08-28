@@ -21,7 +21,7 @@ view internal {
       allow-recursion { ip_interne;};
       zone "wt1-1.ephec-ti.be" IN {
               type master;
-              file "/etc/bind/internals/internals/db.wt1-1.ephec-ti.be";
+              file "/etc/bind/db.intranet.wt1-1.ephec-ti.be";
       };
 };
 

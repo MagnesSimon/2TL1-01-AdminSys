@@ -2,7 +2,7 @@ version: '3'
 
 services:
   mail:
-    image: saitam/mail2:latest
+    image: mail2:latest
     container_name: mail2
     #ports:
       #- "25:25/tcp"
@@ -13,7 +13,7 @@ services:
       #- "995:995/tcp"
     networks:
       dmz:
-        ipv4_address: 172.17.2.5
+        ipv4_address: 172.16.1.6
         aliases:
           - "mail.wt1-1.ephec-ti.be"
 networks:

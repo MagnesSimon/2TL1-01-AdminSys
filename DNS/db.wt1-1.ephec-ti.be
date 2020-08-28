@@ -13,10 +13,12 @@ wt1-1.ephec-ti.be.	IN	SOA	ns.wt1-1.ephec-ti.be. HE201558@students.ephec.be. (
 @       IN       MX      10  mail
 
 wt1-1.ephec-ti.be.		IN	NS	ns.wt1-1.ephec-ti.be.
-ns.wt1-1.ephec-ti.be.		IN	A	51.178.40.251
-www.wt1-1.ephec-ti.be.		IN	A	51.178.40.251
-b2b.wt1-1.ephec-ti.be.		IN	A	51.178.40.251
-intranet.wt1-1.ephec-ti.be.	IN	A	51.178.40.251
+ns				IN	A	51.178.40.251
+www				IN	A	51.178.40.251
+@				IN	A	51.178.40.251
+b2b				IN	CNAME	www
+intranet			IN	CNAME	www
+
 sip				IN	A	51.178.40.251
 _sip._udp			SRV	0	0	5060	sip
 _sip._tcp			SRV	0	0	5060	sip

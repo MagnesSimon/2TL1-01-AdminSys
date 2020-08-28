@@ -9,11 +9,11 @@ RUN apt-get install -y dovecot-imapd dovecot-pop3d
 #RUN apt-get install dovecot-pop3d
 RUN apt-get install postfix mailutils  -y
 RUN apt-get -y install nano
-RUN rm /etc/postfix/main.cf
-RUN rm /etc/dovecot/conf.d/10-ssl.conf
-RUN rm /etc/dovecot/conf.d/10-master.conf
-RUN rm /etc/dovecot/conf.d/10-mail.conf
-RUN rm /etc/dovecot/conf.d/10-auth.conf
+#RUN rm /etc/postfix/main.cf
+#RUN rm /etc/dovecot/conf.d/10-ssl.conf
+#RUN rm /etc/dovecot/conf.d/10-master.conf
+#RUN rm /etc/dovecot/conf.d/10-mail.conf
+#RUN rm /etc/dovecot/conf.d/10-auth.conf
 
 RUN adduser contact
 
